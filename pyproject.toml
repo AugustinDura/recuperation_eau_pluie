@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "recuperation-eau-pluie"
+version = "0.1.0"
+description = ""
+authors = ["Augustin Dura <augustindura@gmail.com>"]
+readme = "README.md"
+packages = [{include = "recuperation_eau_pluie"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs = "^1.4.2"
+mkdocs-bibtex = "^2.8.15"
+mkdocs-jupyter = "^0.24.1"
+mike = "^1.1.2"
+mkdocs-material = "^9.1.4"
+mkdocs-gen-files = "^0.4.0"
+mkdocstrings = "^0.20.0"
+mkdocstrings-python = "^0.8.3"
+mkdocs-glightbox = "^0.3.2"
+altair = "^4.2.2"
+vega = "^3.6.0"
+mkdocs-literate-nav = "^0.6.0"
+mkdocs-charts-plugin = "^0.0.8"
+jupyter = "^1.0.0"
+pandas = "^1.5.3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+ruff = "^0.0.259"
+mypy = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
