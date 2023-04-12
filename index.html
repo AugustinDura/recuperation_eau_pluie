@@ -35,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#welcome-to-mkdocs">
+<a class="md-skip" href="#presentation">
           Skip to content
         </a>
 </div>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              Présentation
             
           </span>
 </div>
@@ -168,13 +168,37 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#commands">
-    Commands
+<a class="md-nav__link" href="#contexte">
+    Contexte
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#project-layout">
-    Project layout
+<a class="md-nav__link" href="#problematique">
+    Problématique
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#protocole">
+    Protocole
+  </a>
+<nav aria-label="Protocole" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#parametres">
+    Paramètres
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelisation">
+    Modélisation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#donnees">
+    Données
   </a>
 </li>
 </ul>
@@ -184,29 +208,38 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">¶</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.
-Do references work ? <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>
-And within this site : [projet][https://www.google.fr]</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">¶</a></h2>
+<h1 id="presentation">Présentation<a class="headerlink" href="#presentation" title="Permanent link">¶</a></h1>
+<p>L'objectif de ce projet est de dimensionner une cuve de récupération d'eau de pluie.</p>
+<h2 id="contexte">Contexte<a class="headerlink" href="#contexte" title="Permanent link">¶</a></h2>
+<p>On étudie ici un hameau non raccordé au réseau d'eau, dont l'approvisionnement dépend entièrement d'une source. Par le passé, en période de sécheresse, celle-ci a vu son débit diminuer jusqu'à être quasiment nul. Aussi l'augmentation de la fréquence, l'intensité et la longueur des épisodes secs impose-t-il de réduire les usages et d'améliorer la conservation. </p>
+<p>Une voie trouvée est de récupérer et stocker les eaux pluviales.</p>
+<p>Ce procédé n'est pas nouveau : l'empereur Justinien en son temps faisait déjà construire une citerne de plusieurs milliers de mètres cubes près de Sainte-Sophie ; et dans les années 1870 le réservoir de Montsouris permettait à Paris d'être approvisionné en eau potable. </p>
+<p>Plus modestement, l'objectif est ici de reproduire une citerne comme en faisaient les vénitiens : </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/coupe_citerne_venise.png"><img alt="**hello**" src="../images/coupe_citerne_venise.png"/></a></p>
+<h2 id="problematique">Problématique<a class="headerlink" href="#problematique" title="Permanent link">¶</a></h2>
+<p>On cherche à déterminer le volume minimal de la cuve tel qu'elle puisse stocker suffisamment d'eau pour couvrir les besoins annuels, actuels <em>et</em> futurs. </p>
+<h2 id="protocole">Protocole<a class="headerlink" href="#protocole" title="Permanent link">¶</a></h2>
+<h3 id="parametres">Paramètres<a class="headerlink" href="#parametres" title="Permanent link">¶</a></h3>
+<p>Le volume de la cuve dépend de trois paramètres :</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li>la pluviométrie ;</li>
+<li>la surface de récupération ;</li>
+<li>les usages.</li>
 </ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
-<p>/bibliography</p>
+<h3 id="modelisation">Modélisation<a class="headerlink" href="#modelisation" title="Permanent link">¶</a></h3>
+<p>On prendra ici comme pas de temps la journée. </p>
+<p>La surface est constante. 
+Les usages sont lissés et sont considérés comme ne présentant pas de variabilité d'une année sur l'autre. </p>
+<p>La pluviométrie, elle, est considérée comme variable. 
+Dans un premier temps on simulera une année moyenne, puis on introduira des variations en intensité et en répartition des pluies. </p>
+<h2 id="donnees">Données<a class="headerlink" href="#donnees" title="Permanent link">¶</a></h2>
+<p>Les données utilisées proviennent de Météo France pour la pluviométrie<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, le reste est donné par les propriétaires. </p>
+<p>\bibliography</p>
 <div class="footnote">
 <hr/>
 <ol>
 <li id="fn:1">
-<p>Eau France. Volume d'eau potable consommé par habitant par jour en 2016. 2020. URL: <a href="https://www.eaufrance.fr/chiffres-cles/volume-deau-potable-consomme-par-habitant-par-jour-en-2016">https://www.eaufrance.fr/chiffres-cles/volume-deau-potable-consomme-par-habitant-par-jour-en-2016</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>Météo France. Fiche climatologique Clermont-Ferrand. 2020. URL: <a href="https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_63113001.pdf">https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_63113001.pdf</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 </ol>
 </div>
