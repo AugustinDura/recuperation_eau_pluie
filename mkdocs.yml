@@ -20,20 +20,18 @@ theme:
     - content.code.copy
     - toc.follow
 
-
 nav:
-
-  - home.md
+  - index.md
   - Projet:
-    - Projet/besoins.ipynb
-    - Projet/pluie.ipynb
+      - Projet/besoins.ipynb
+      - Projet/pluie.ipynb
 
- # - Source:
- #   - references.bib
+  # - Source:
+  #   - references.bib
 
 #  - Code Reference: references.bib
- # - changelog.md
- # - roadmap.md
+# - changelog.md
+# - roadmap.md
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -91,8 +89,6 @@ plugins:
       css_dir: assets/css
       javascript_dir: assets/js
 
-      
-
 markdown_extensions:
   - admonition
   - pymdownx.superfences:
@@ -106,7 +102,7 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - footnotes
-  - toc: 
+  - toc:
       permalink: true
   - md_in_html
   - attr_list
@@ -114,6 +110,5 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.emoji:
-
 #      emoji_index: !!python/name:materialx.emoji.twemoji
 #      emoji_generator: !!python/name:materialx.emoji.to_svg
