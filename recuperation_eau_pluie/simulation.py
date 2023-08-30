@@ -1,7 +1,7 @@
-# fonction de test pour appeler depuis fichier parent 
-import pandas as pd 
+# fonction de test pour appeler depuis fichier parent
 
-def test_function(variable: int):
-    print("hello world !")
+import pandas as pd
+import numpy as np
 
-
+def test_function():
+    print('Hello World !')
